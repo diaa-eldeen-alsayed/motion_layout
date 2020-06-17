@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+           <KeyPosition
+               motion:motionTarget="@+id/imageView"
+               motion:framePosition="50"
+               motion:keyPositionType="parentRelative"
+               motion:percentX="0.665"
+               motion:percentY="0.513" />
+           <KeyPosition
+               motion:motionTarget="@+id/imageView2"
+               motion:framePosition="49"
+               motion:keyPositionType="parentRelative"
+               motion:percentX="0.356"
+               motion:percentY="0.51" />
+       </KeyFrameSet>
+        <OnClick />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_marginEnd="16dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="100dp"
+            android:id="@+id/imageView"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" />
+        <Constraint
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:id="@+id/imageView2"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" />
+    </ConstraintSet>
+</MotionScene>
